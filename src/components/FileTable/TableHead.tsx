@@ -1,16 +1,18 @@
+import { TableHeadContainer, TableHeaderData } from "./styles";
+
 interface Props {
   tableHeaderNames: string[];
 }
 
 const TableHead = ({ tableHeaderNames }: Props) => {
   return (
-    <thead>
+    <TableHeadContainer>
       <tr>
         {tableHeaderNames.map((name) => (
-          <td key={name}>{name}</td>
+          <TableHeaderData key={name}>{name}</TableHeaderData>
         ))}
       </tr>
-    </thead>
+    </TableHeadContainer>
   );
 };
 

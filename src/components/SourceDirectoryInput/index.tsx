@@ -1,5 +1,5 @@
 /**
- * @description Allows the user to select a source directory and upload all contents inside.
+ * @description Allows the user to select a source directory and updates the files state with all content inside (files and directories).
  */
 import { ChangeEvent } from "react";
 import { File } from "../../types/File";
@@ -12,7 +12,6 @@ const SourceDirectoryInput = ({ setFiles }: Props) => {
   function selectFolder(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.files) {
       const uploadedFiles = e.target.files;
-      console.log(uploadedFiles);
 
       // Since this app is small and the File type import in App.tsx is coming from a different relative file path, an error is expected.
       // @ts-expect-error

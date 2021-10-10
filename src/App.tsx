@@ -5,7 +5,11 @@ import { FileList } from "./types/File";
 
 const App = () => {
   const [files, setFiles] = useState<FileList>([]);
-  const tableHeaderNames = ["File Name", "File Size", "Last Modified Date"];
+  const tableHeaderNames = [
+    "File Name/Directory Path",
+    "File Size",
+    "Last Modified Date",
+  ];
 
   return (
     <>

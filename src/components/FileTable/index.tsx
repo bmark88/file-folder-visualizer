@@ -7,6 +7,7 @@
  * 5. Total file size including hidden files such as .DS_Store
  */
 import { FileList } from "../../types/File";
+import { TableContainer, TableContainerWrapper } from "./styles";
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
 import TableTotals from "./TableTotals";
@@ -19,10 +20,12 @@ interface Props {
 const FileTable = ({ fileList, tableHeaderNames }: Props) => {
   return (
     <>
-      <table>
-        <TableHead tableHeaderNames={tableHeaderNames} />
-        <TableBody fileList={fileList} />
-      </table>
+      <TableContainerWrapper>
+        <TableContainer>
+          <TableHead tableHeaderNames={tableHeaderNames} />
+          <TableBody fileList={fileList} />
+        </TableContainer>
+      </TableContainerWrapper>
       <TableTotals fileList={fileList} />
     </>
   );
