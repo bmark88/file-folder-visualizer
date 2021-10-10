@@ -34,7 +34,7 @@ const TableBody = ({ fileList }: Props) => {
 
           <TableBodyData>
             <BoldSpan>{!file.type ? "Directory Path" : "File Name"}:</BoldSpan>{" "}
-            {!file.type ? file.webkitRelativePath : file.name}
+            {!file.type ? "*" + file.webkitRelativePath : file.name}
           </TableBodyData>
           <TableBodyData>
             <BoldSpan>File Size:</BoldSpan> {file.size}

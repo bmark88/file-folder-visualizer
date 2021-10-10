@@ -1,4 +1,4 @@
-import { TableHeadContainer, TableHeaderData } from "./styles";
+import { TableHeadContainer, TableHeaderRow, TableHeaderData } from "./styles";
 
 interface Props {
   tableHeaderNames: string[];
@@ -7,11 +7,11 @@ interface Props {
 const TableHead = ({ tableHeaderNames }: Props) => {
   return (
     <TableHeadContainer>
-      <tr>
+      <TableHeaderRow>
         {tableHeaderNames.map((name) => (
           <TableHeaderData key={name}>{name}</TableHeaderData>
         ))}
-      </tr>
+      </TableHeaderRow>
     </TableHeadContainer>
   );
 };

@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const MainContent = styled.main`
+  max-width: 1440px;
+  margin: 0 auto;
+`;
+
 export const TitleH1 = styled.h1`
   font-size: 2.4rem;
   text-transform: uppercase;
