@@ -1,24 +1,70 @@
+import { Fragment } from "react";
 import { File } from "../../types/File";
+import { FileItemContainer } from "./styles";
 
 interface Props {
   fileList: File[];
 }
 
 const FileTable = ({ fileList }: Props) => {
+  const tableHeaderNames = ["File Name", "File Size", "Last Modified Date"];
+
+  // fileSizes includes .DS_Store sizes which are automatically generated for directories
+  const fileSizes = fileList.map((file) => file.size);
+  const totalFileSize = fileSizes.reduce(
+    (currSize, nextSize) => currSize + nextSize
+  );
+
+  // Totals represent all nested files and directories within the selected source directory provided by the user
+  const totalFileCount = fileList.filter((file) => file.type).length;
+  const totalDirectoryCount = fileList.length - totalFileCount;
+
+  const memoizedFileList = fileList;
+  const sortedFileList = memoizedFileList.sort((a, b) => a.size - b.size);
+
+  console.log({
+    fileSizes,
+    totalFileSize,
+    sortedFileList,
+  });
+
   return (
-    <div>
-      {fileList.map((file) => (
-        <>
-          {console.log({ file })}
-          <div>lastModified: {file.lastModified}</div>
-          <div>lastModifiedDate: {file.lastModifiedDate.toString()}</div>
-          <div>name: {file.name}</div>
-          <div>size: {file.size}</div>
-          <div>type: {file.type}</div>
-          <div>webkitRelativePath: {file.webkitRelativePath}</div>
-        </>
-      ))}
-    </div>
+    <Fragment>
+      <table>
+        <thead>
+          <tr>
+            {tableHeaderNames.map((name) => (
+              <td key={name}>{name}</td>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {sortedFileList.map((file) => (
+            <FileItemContainer
+              key={file.webkitRelativePath}
+              isDirectory={!file.type}
+            >
+              {console.log({ file })}
+              <td>
+                {file.name === ".DS_Store"
+                  ? file.webkitRelativePath
+                  : file.name}
+              </td>
+              <td>{file.size}</td>
+              <td>{file.lastModifiedDate.toString()}</td>
+            </FileItemContainer>
+          ))}
+        </tbody>
+      </table>
+      <div>
+        <p>
+          <label>Total # of Sub-directories:</label>{" "}
+          {totalDirectoryCount.toString()}
+        </p>
+        <p>Total # of Files: {totalFileCount.toString()}</p>
+        <p>Total File Size: {totalFileSize.toString()} bytes</p>
+      </div>
+    </Fragment>
   );
 };
 
