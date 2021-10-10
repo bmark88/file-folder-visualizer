@@ -1,3 +1,6 @@
+/**
+ * @description Allows the user to select a source directory and upload all contents inside.
+ */
 import { ChangeEvent } from "react";
 import { File } from "../../types/File";
 

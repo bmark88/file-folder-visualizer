@@ -1,3 +1,6 @@
+/**
+ * @description Performs calculations on fileList prop to provide file stat totals.
+ */
 import { File, FileList } from "../../types/File";
 
 interface Props {
