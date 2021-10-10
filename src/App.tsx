@@ -5,6 +5,7 @@ import { File } from "./types/File";
 
 const App = () => {
   const [files, setFiles] = useState<File[]>([]);
+  const tableHeaderNames = ["File Name", "File Size", "Last Modified Date"];
 
   useEffect(() => {
     console.log({ files });
@@ -13,7 +14,11 @@ const App = () => {
   return (
     <>
       <SourceDirectoryInput setFiles={setFiles} />
-      {files.length > 0 ? <FileTable fileList={files} /> : "No Files Exist"}
+      {files.length > 0 ? (
+        <FileTable fileList={files} tableHeaderNames={tableHeaderNames} />
+      ) : (
+        "No Files Exist"
+      )}
     </>
   );
 };

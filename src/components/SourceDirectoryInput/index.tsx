@@ -11,20 +11,17 @@ const SourceDirectoryInput = ({ setFiles }: Props) => {
   }
 
   return (
-    <div>
-      <input
-        type="file"
-        onChange={(event) => selectFolder(event)}
-        // @ts-expect-error
-        directory="true"
-        webkitdirectory="true"
-        mozdirectory="true"
-        msdirectory="true"
-        odirectory="true"
-        multiple
-      />
-      Source Directory Input
-    </div>
+    <input
+      type="file"
+      onChange={(event) => selectFolder(event)}
+      // @ts-expect-error
+      directory="true"
+      webkitdirectory="true"
+      mozdirectory="true"
+      msdirectory="true"
+      odirectory="true"
+      multiple
+    />
   );
 };
 
