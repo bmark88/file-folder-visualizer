@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const InputContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 50px;
   margin-bottom: 20px;
 `;
 
@@ -18,6 +19,12 @@ export const StyledLabel = styled.label`
   cursor: pointer;
   min-width: 150px;
   text-align: center;
+  border: solid 3px transparent;
+
+  &:hover {
+    border-color: #8fd65b;
+    background-color: #fff;
+  }
 `;
 
 export const HiddenInputWrapper = styled.div`

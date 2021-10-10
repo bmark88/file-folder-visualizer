@@ -2,7 +2,7 @@
  * @description Allows the user to select a source directory and updates the files state with all content inside (files and directories).
  */
 import { ChangeEvent } from "react";
-import { File } from "../../types/File";
+import { File, FileList } from "../../types/File";
 import {
   StyledLabel,
   HiddenInputWrapper,
@@ -11,9 +11,10 @@ import {
 
 interface Props {
   setFiles: (fileList: File[]) => void;
+  files: FileList;
 }
 
-const SourceDirectoryInput = ({ setFiles }: Props) => {
+const SourceDirectoryInput = ({ setFiles, files }: Props) => {
   function selectFolder(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.files) {
       const uploadedFiles = e.target.files;
@@ -26,7 +27,9 @@ const SourceDirectoryInput = ({ setFiles }: Props) => {
 
   return (
     <InputContainer>
-      <StyledLabel htmlFor="fileUpload">Choose SRC Directory</StyledLabel>
+      <StyledLabel htmlFor="fileUpload">
+        {files.length === 0 ? "Choose" : "Change"} SRC Directory
+      </StyledLabel>
       <HiddenInputWrapper>
         <input
           id="fileUpload"
