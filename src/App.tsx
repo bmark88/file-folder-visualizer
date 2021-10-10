@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import FileTable from "./components/FileTable";
 import SourceDirectoryInput from "./components/SourceDirectoryInput";
-import { File } from "./types/File";
+import { FileList } from "./types/File";
 
 const App = () => {
-  const [files, setFiles] = useState<File[]>([]);
+  const [files, setFiles] = useState<FileList>([]);
   const tableHeaderNames = ["File Name", "File Size", "Last Modified Date"];
 
   useEffect(() => {

@@ -6,3 +6,5 @@ export type File = {
   type: string;
   webkitRelativePath: string;
 };
+
+export type FileList = File[];

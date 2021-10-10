@@ -1,3 +1,4 @@
+import { ChangeEvent } from "react";
 import { File } from "../../types/File";
 
 interface Props {
@@ -5,9 +6,15 @@ interface Props {
 }
 
 const SourceDirectoryInput = ({ setFiles }: Props) => {
-  function selectFolder(e: any) {
-    const uploadedFiles = e.target.files;
-    setFiles([...uploadedFiles]);
+  function selectFolder(e: ChangeEvent<HTMLInputElement>) {
+    if (e.target.files) {
+      const uploadedFiles = e.target.files;
+      console.log(uploadedFiles);
+
+      // Since this app is small and the File type import in App.tsx is coming from a different relative file path, an error is expected.
+      // @ts-expect-error
+      setFiles([...uploadedFiles]);
+    }
   }
 
   return (

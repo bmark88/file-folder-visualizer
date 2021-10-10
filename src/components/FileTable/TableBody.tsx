@@ -1,8 +1,8 @@
-import { File } from "../../types/File";
+import { File, FileList } from "../../types/File";
 import { FileItemContainer } from "./styles";
 
 interface Props {
-  fileList: File[];
+  fileList: FileList;
 }
 
 const TableBody = ({ fileList }: Props) => {
@@ -11,7 +11,7 @@ const TableBody = ({ fileList }: Props) => {
 
   return (
     <tbody>
-      {sortedFileList.map((file) => (
+      {sortedFileList.map((file: File) => (
         <FileItemContainer
           key={file.webkitRelativePath}
           isDirectory={!file.type}

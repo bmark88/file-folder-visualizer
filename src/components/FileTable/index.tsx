@@ -1,10 +1,10 @@
-import { File } from "../../types/File";
+import { FileList } from "../../types/File";
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
 import TableTotals from "./TableTotals";
 
 interface Props {
-  fileList: File[];
+  fileList: FileList;
   tableHeaderNames: string[];
 }
 

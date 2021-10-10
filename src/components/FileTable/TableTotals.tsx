@@ -1,12 +1,12 @@
-import { File } from "../../types/File";
+import { File, FileList } from "../../types/File";
 
 interface Props {
-  fileList: File[];
+  fileList: FileList;
 }
 
 const TableTotals = ({ fileList }: Props) => {
   // fileSizes includes .DS_Store sizes which are automatically generated for directories
-  const fileSizes = fileList.map((file) => file.size);
+  const fileSizes = fileList.map((file: File) => file.size);
   const totalFileSize = fileSizes.reduce(
     (currSize, nextSize) => currSize + nextSize
   );
