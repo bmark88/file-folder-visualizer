@@ -2,6 +2,7 @@
  * @description Performs calculations on fileList prop to provide file stat totals.
  */
 import { File, FileList } from "../../types/File";
+import { BoldSpan, TotalDetailsContainer, TotalDetailText } from "./styles";
 
 interface Props {
   fileList: FileList;
@@ -19,14 +20,20 @@ const TableTotals = ({ fileList }: Props) => {
   const totalDirectoryCount = fileList.length - totalFileCount;
 
   return (
-    <div>
-      <p>
-        <label>Total # of Sub-directories:</label>{" "}
+    <TotalDetailsContainer>
+      <TotalDetailText>
+        <BoldSpan fontWeight={600}>Total # of Sub-directories:</BoldSpan>{" "}
         {totalDirectoryCount.toString()}
-      </p>
-      <p>Total # of Files: {totalFileCount.toString()}</p>
-      <p>Total File Size: {totalFileSize.toString()} bytes</p>
-    </div>
+      </TotalDetailText>
+      <TotalDetailText>
+        <BoldSpan fontWeight={600}>Total # of Files:</BoldSpan>{" "}
+        {totalFileCount.toString()}
+      </TotalDetailText>
+      <TotalDetailText>
+        <BoldSpan fontWeight={600}>Total File Size:</BoldSpan>{" "}
+        {totalFileSize.toString()} bytes
+      </TotalDetailText>
+    </TotalDetailsContainer>
   );
 };
 

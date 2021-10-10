@@ -3,6 +3,11 @@
  */
 import { ChangeEvent } from "react";
 import { File } from "../../types/File";
+import {
+  StyledLabel,
+  HiddenInputWrapper,
+  InputContainer,
+} from "../SourceDirectoryInput/styles";
 
 interface Props {
   setFiles: (fileList: File[]) => void;
@@ -20,17 +25,23 @@ const SourceDirectoryInput = ({ setFiles }: Props) => {
   }
 
   return (
-    <input
-      type="file"
-      onChange={(event) => selectFolder(event)}
-      // @ts-expect-error
-      directory="true"
-      webkitdirectory="true"
-      mozdirectory="true"
-      msdirectory="true"
-      odirectory="true"
-      multiple
-    />
+    <InputContainer>
+      <StyledLabel htmlFor="fileUpload">Choose SRC Directory</StyledLabel>
+      <HiddenInputWrapper>
+        <input
+          id="fileUpload"
+          type="file"
+          onChange={(event) => selectFolder(event)}
+          // @ts-expect-error
+          directory="true"
+          webkitdirectory="true"
+          mozdirectory="true"
+          msdirectory="true"
+          odirectory="true"
+          multiple
+        />
+      </HiddenInputWrapper>
+    </InputContainer>
   );
 };
 

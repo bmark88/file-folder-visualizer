@@ -15,6 +15,10 @@ export const FileItemRow = styled.tr<{ isDirectory: boolean }>`
       border: dotted 2px #000;
     `};
 
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
   @media screen and (min-width: 768px) {
     display: table-row;
   }
@@ -38,6 +42,7 @@ export const TableContainerWrapper = styled.div`
   max-height: 70vh;
   overflow-y: hidden;
   overflow-y: scroll;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 `;
 
 export const TableBodyContainer = styled.tbody``;
@@ -85,5 +90,18 @@ export const FileDetailText = styled.p`
   text-overflow: ellipsis;
   max-width: calc(100vw - 26px);
   white-space: nowrap;
-  margin: unset;
+`;
+
+export const TotalDetailsContainer = styled.div`
+  padding: 25px;
+  max-width: 500px;
+  margin: 20px auto 0;
+  border-top: solid 2px #000;
+`;
+
+export const TotalDetailText = styled.p`
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 300;
 `;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FileTable from "./components/FileTable";
 import SourceDirectoryInput from "./components/SourceDirectoryInput";
+import { TitleH1 } from "./components/styles";
 import { FileList } from "./types/File";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <>
+      <TitleH1>Directory Visualizer</TitleH1>
       <SourceDirectoryInput setFiles={setFiles} />
       {files.length > 0 ? (
         <FileTable fileList={files} tableHeaderNames={tableHeaderNames} />
