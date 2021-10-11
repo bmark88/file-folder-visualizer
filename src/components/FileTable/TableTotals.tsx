@@ -19,20 +19,29 @@ const TableTotals = ({ fileList }: Props) => {
   const totalFileCount = fileList.filter((file) => file.type).length;
   const totalDirectoryCount = fileList.length - totalFileCount;
 
+  const detailItems = [
+    {
+      titleText: "Total # of Sub-directories:",
+      valueText: totalDirectoryCount.toString(),
+    },
+    {
+      titleText: "Total # of Files:",
+      valueText: totalFileCount.toString(),
+    },
+    {
+      titleText: "Total File Size:",
+      valueText: `${totalFileSize.toString()} bytes`,
+    },
+  ];
+
   return (
     <TotalDetailsContainer>
-      <TotalDetailText>
-        <BoldSpan fontWeight={600}>Total # of Sub-directories:</BoldSpan>{" "}
-        {totalDirectoryCount.toString()}
-      </TotalDetailText>
-      <TotalDetailText>
-        <BoldSpan fontWeight={600}>Total # of Files:</BoldSpan>{" "}
-        {totalFileCount.toString()}
-      </TotalDetailText>
-      <TotalDetailText>
-        <BoldSpan fontWeight={600}>Total File Size:</BoldSpan>{" "}
-        {totalFileSize.toString()} bytes
-      </TotalDetailText>
+      {detailItems.map((item) => (
+        <TotalDetailText>
+          <BoldSpan fontWeight={600}>{item.titleText}</BoldSpan>{" "}
+          {item.valueText}
+        </TotalDetailText>
+      ))}
     </TotalDetailsContainer>
   );
 };
