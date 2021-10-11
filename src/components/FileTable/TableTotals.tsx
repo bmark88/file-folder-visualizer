@@ -36,8 +36,8 @@ const TableTotals = ({ fileList }: Props) => {
 
   return (
     <TotalDetailsContainer>
-      {detailItems.map((item) => (
-        <TotalDetailText>
+      {detailItems.map((item, idx) => (
+        <TotalDetailText key={idx}>
           <BoldSpan fontWeight={600}>{item.titleText}</BoldSpan>{" "}
           {item.valueText}
         </TotalDetailText>

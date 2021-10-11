@@ -32,7 +32,7 @@ const TableBody = ({ fileList }: Props) => {
             </FileDetailText>{" "}
           </MobileItemTitleData>
 
-          <TableBodyData>
+          <TableBodyData data-testid="fileName">
             <BoldSpan>{!file.type ? "Directory Path" : "File Name"}:</BoldSpan>{" "}
             {!file.type ? "*" + file.webkitRelativePath : file.name}
           </TableBodyData>

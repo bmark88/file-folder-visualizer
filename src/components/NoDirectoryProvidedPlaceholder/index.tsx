@@ -8,7 +8,7 @@ import {
 const NoDirectoryProvidedPlacholder = () => {
   return (
     <NothingChosenContainer>
-      <NothingChosenText>
+      <NothingChosenText data-testid="emptyFiles">
         You haven't chosen a source folder yet!
       </NothingChosenText>
       <EmptyFolderImage alt="Empty Folder" src={emptyFolder} />
