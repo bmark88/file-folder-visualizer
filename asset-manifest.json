@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/file-folder-visualizer/static/css/main.ab21152e.chunk.css",
+    "main.js": "/file-folder-visualizer/static/js/main.c42eddcf.chunk.js",
+    "main.js.map": "/file-folder-visualizer/static/js/main.c42eddcf.chunk.js.map",
+    "runtime-main.js": "/file-folder-visualizer/static/js/runtime-main.b0006582.js",
+    "runtime-main.js.map": "/file-folder-visualizer/static/js/runtime-main.b0006582.js.map",
+    "static/js/2.69db60db.chunk.js": "/file-folder-visualizer/static/js/2.69db60db.chunk.js",
+    "static/js/2.69db60db.chunk.js.map": "/file-folder-visualizer/static/js/2.69db60db.chunk.js.map",
+    "static/js/3.a04b3fe3.chunk.js": "/file-folder-visualizer/static/js/3.a04b3fe3.chunk.js",
+    "static/js/3.a04b3fe3.chunk.js.map": "/file-folder-visualizer/static/js/3.a04b3fe3.chunk.js.map",
+    "index.html": "/file-folder-visualizer/index.html",
+    "static/css/main.ab21152e.chunk.css.map": "/file-folder-visualizer/static/css/main.ab21152e.chunk.css.map",
+    "static/js/2.69db60db.chunk.js.LICENSE.txt": "/file-folder-visualizer/static/js/2.69db60db.chunk.js.LICENSE.txt",
+    "static/media/emptyFolder.0d9851c0.png": "/file-folder-visualizer/static/media/emptyFolder.0d9851c0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b0006582.js",
+    "static/js/2.69db60db.chunk.js",
+    "static/css/main.ab21152e.chunk.css",
+    "static/js/main.c42eddcf.chunk.js"
+  ]
+}
