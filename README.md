@@ -1,6 +1,7 @@
 # Quick Start :open_file_folder:
 
-This project is hosted at: https://bmark88.github.io/file-folder-visualizer/
+> This project is hosted at: https://bmark88.github.io/file-folder-visualizer/
+ 
 `
 yarn install
 yarn start
