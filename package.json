@@ -8,9 +8,12 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^27.0.2",
-    "@types/node": "^16.10.2",
+    "@types/node": "^16.10.4",
     "@types/react": "^17.0.27",
     "@types/react-dom": "^17.0.9",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
     "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -25,7 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon --watch './**/*.ts' --exec 'ts-node' server.ts"
   },
   "eslintConfig": {
     "extends": [
@@ -46,7 +50,10 @@
     ]
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/styled-components": "^5.1.14",
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.3.0"
   }
 }
